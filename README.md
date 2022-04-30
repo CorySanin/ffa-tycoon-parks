@@ -67,7 +67,7 @@ If you're unfamiliar with git, no problem! You can [install GitHub Desktop](http
 
 1. Select Repository → Push. Then Branch → Create pull request. On the webpage, fill out the details and click "Create pull request." Periodically check on the pull request to see if it has been given feedback or has been merged.
 
-If your park requires object files that aren't currently in the repo, I'll request the files. Object files are stored in `Documents\OpenRCT2\object` on Windows and `~/.config/OpenRCT2/object` everywhere else. Copy the requested files to `object`, commit, and push.
+Pull requests trigger an action to verify that all the object files needed are in the `object` directory. If the action fails, check the output and add the missing objects. Object files are stored in `Documents\OpenRCT2\object` on Windows and `~/.config/OpenRCT2/object` everywhere else. Copy the requested files to `object`, commit, and push.
 
 If any other change is requested, update your park and go back to step 4. If it has been merged, prepare for a new submission. In GitHub Desktop, in the current branch dropdown, select default branch master. You can go back to step 3 to start a new submission.
 
