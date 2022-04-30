@@ -31,6 +31,9 @@ function checkSave(file) {
         let child = spawn('openrct2-cli', [`${file}`]);
 
         let timeout = setTimeout(() => {
+            stdout.forEach(l => {
+                console.log(l);
+            });
             reject(['TIMED OUT']);
             child.kill();
         }, TimeOut);
