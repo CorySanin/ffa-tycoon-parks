@@ -43,7 +43,8 @@ You have your park save(s) and they meet all the requirements. Now what?
 1. [Fork this repo](https://github.com/CorySanin/ffa-tycoon-parks/fork) (or pull from upstream if your fork is behind)
 1. Clone your fork
 1. Create a new branch (a good name would be the name of your park)
-1. Move your saves to their respective folders in the project (parks/sandbox and parks/economy)
+1. Move your saves to their respective folders in the project (`parks/sandbox` and `parks/economy`)
+1. Add all required object files to the `object` folder
 1. Commit and push
 1. [Create a pull request](https://github.com/CorySanin/ffa-tycoon-parks/pulls) from your branch
 1. If you have more to submit, switch back to the master brach and go back to step 4
@@ -66,7 +67,9 @@ If you're unfamiliar with git, no problem! You can [install GitHub Desktop](http
 
 1. Select Repository → Push. Then Branch → Create pull request. On the webpage, fill out the details and click "Create pull request." Periodically check on the pull request to see if it has been given feedback or has been merged.
 
-If a change is requested, update your park and go back to step 4. If it has been merged, prepare for a new submission. In GitHub Desktop, in the current branch dropdown, select default branch master. You can go back to step 3 to start a new submission.
+If your park requires object files that aren't currently in the repo, I'll request the files. Object files are stored in `Documents\OpenRCT2\object` on Windows and `~/.config/OpenRCT2/object` everywhere else. Copy the requested files to `object`, commit, and push.
+
+If any other change is requested, update your park and go back to step 4. If it has been merged, prepare for a new submission. In GitHub Desktop, in the current branch dropdown, select default branch master. You can go back to step 3 to start a new submission.
 
 ## Getting Upstream Changes in GitHub Desktop
 
