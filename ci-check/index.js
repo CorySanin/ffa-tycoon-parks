@@ -1,7 +1,7 @@
 const spawn = require('child_process').spawn;
 
 const ObjectRegex = new RegExp('\\[(.+)\\]');
-const TimeOut = 180000;
+const TimeOut = 120000;
 
 let save = process.argv[2];
 save = save.substring(save.indexOf('/parks/'));
@@ -50,6 +50,7 @@ function checkSave(file) {
                 }
             }
             else {
+                console.log(str);
                 stdout.push(str);
             }
         });
