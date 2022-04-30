@@ -1,0 +1,8 @@
+{
+  "name": "ci-check",
+  "version": "1.0.0",
+  "description": "check parks for CI",
+  "main": "index.js",
+  "author": "Cory Sanin",
+  "license": "MIT"
+}

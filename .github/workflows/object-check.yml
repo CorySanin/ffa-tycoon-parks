@@ -1,0 +1,32 @@
+name: Object Check
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+          fetch-depth: 2
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag "ci-check:latest"
+
+    - name: Run check
+      run: |
+        ln -sf ${{ github.workspace }}/parks /parks
+        for file in /parks/*/*.park; do
+          docker run --rm -v ${{ github.workspace }}/parks:/parks -v ${{ github.workspace }}/object:/home/node/.config/OpenRCT2/object ci-check:latest index.js "$file"
+        done
+    
