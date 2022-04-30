@@ -50,7 +50,6 @@ function checkSave(file) {
                 }
             }
             else {
-                console.log(str);
                 stdout.push(str);
             }
         });
