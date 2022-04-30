@@ -1,5 +1,5 @@
 function main() {
-    console.log('EOF');
+    console.log('EOF$');
 }
 
 registerPlugin({

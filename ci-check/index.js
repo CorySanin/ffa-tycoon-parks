@@ -38,7 +38,7 @@ function checkSave(file) {
         child.stdout.setEncoding('utf8');
         child.stdout.on('data', function (data) {
             let str = data.toString();
-            if (str.startsWith('[ci-plugin]') && str.includes(`'EOF`)) {
+            if (str.includes(`'EOF$`)) {
                 clearTimeout(timeout);
                 child.kill();
                 let notfound = processLines(stdout);
