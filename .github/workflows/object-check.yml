@@ -25,8 +25,8 @@ jobs:
 
     - name: Run check
       run: |
-        ln -sf ${{ github.workspace }}/parks /parks
         for file in /parks/*/*.park; do
-          docker run --rm -v ${{ github.workspace }}/parks:/parks -v ${{ github.workspace }}/object:/home/node/.config/OpenRCT2/object ci-check:latest index.js "$file"
+          fname=$(echo "$file" | sed "s/${{ github.workspace }}//")
+          docker run --rm -v ${{ github.workspace }}/parks:/parks -v ${{ github.workspace }}/object:/home/node/.config/OpenRCT2/object ci-check:latest index.js "$fname"
         done
     
