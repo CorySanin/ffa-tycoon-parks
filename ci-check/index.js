@@ -4,6 +4,7 @@ const ObjectRegex = new RegExp('\\[(.+)\\]');
 const TimeOut = 180000;
 
 let save = process.argv[2];
+save = save.substring(save.indexOf('/parks/'));
 
 console.log(`Checking save ${save} ...`);
 
