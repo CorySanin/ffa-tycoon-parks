@@ -9,7 +9,6 @@ This repo contains the ffa-tycoon map pool as well as all the objects necessary 
 A park must meet this requirements in order to be considered for the FFA Tycoon map pool:
 
 - Must be submitted by its author or the submitter must have obtained permission from the park's author
-    - Keep in mind that the license for this repo is MIT
 - One map per submission
     - Submitting different types of the same map in the same submission is fine
 - Filename must be all lowercase, use underscores instead of spaces, and suffixed by a hyphen and the scenario type
