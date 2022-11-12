@@ -26,6 +26,6 @@ jobs:
     - name: Run check
       run: |
         for file in ${{ github.workspace }}/parks/*/*.park; do
-          docker run --rm -v ${{ github.workspace }}/parks:/parks ci-check:latest index.js "$file"
+          docker run --rm -v ${{ github.workspace }}/parks:/parks -v ${{ github.workspace }}/object:/home/node/.config/OpenRCT2/object/custom ci-check:latest index.js "$file"
         done
     
