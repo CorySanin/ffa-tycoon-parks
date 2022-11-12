@@ -1,4 +1,4 @@
-FROM corysanin/openrct2-cli:develop-alpine AS rct2
+FROM corysanin/openrct2-cli:latest-alpine AS rct2
 
 FROM node:alpine3.15
 

@@ -1,6 +1,6 @@
 # ffa-tycoon-parks
 
-This repo contains the ffa-tycoon map pool as well as all the objects necessary to load said maps.
+This repo contains the ffa-tycoon map pool.
 
 # Park Submission Guide
 
@@ -11,6 +11,7 @@ A park must meet this requirements in order to be considered for the FFA Tycoon 
 - Must be submitted by its author or the submitter must have obtained permission from the park's author
 - One map per submission
     - Submitting different types of the same map in the same submission is fine
+- Must be compatible with the latest release (do not create a map in a development build)
 - Filename must be all lowercase, use underscores instead of spaces, and suffixed by a hyphen and the scenario type
 - Adequate amount of park staff for when the park is fully developed
 - All park entrances are connected via pathways
@@ -36,14 +37,13 @@ One last thing to consider is that wherever the view port is pointing at when yo
 
 ## Submitting a Park
 
-You have your park save(s) and they meet all the requirements. Now what?
+You have your park save(s) and they meet all the [requirements](#requirements). Now what?
 
 1. Create a GitHub account if you don't already have one
 1. [Fork this repo](https://github.com/CorySanin/ffa-tycoon-parks/fork) (or pull from upstream if your fork is behind)
 1. Clone your fork
 1. Create a new branch (a good name would be the name of your park)
 1. Move your saves to their respective folders in the project (`parks/sandbox` and `parks/economy`)
-1. Add all required object files to the `object` folder
 1. Commit and push
 1. [Create a pull request](https://github.com/CorySanin/ffa-tycoon-parks/pulls) from your branch
 1. If you have more to submit, switch back to the master brach and go back to step 4
@@ -54,7 +54,7 @@ If you're unfamiliar with git, no problem! You can [install GitHub Desktop](http
 
 [Fork this repo](https://github.com/CorySanin/ffa-tycoon-parks/fork)
 
-1. In GitHub Desktop, click "clone a repository from the internet." In the GitHub.com tab, it will list your repos. If your fork isn't there, click the link on the dialog to refresh your repos. Select your fork of ffa-tycoon. Note the destination directory (local path) and click "clone."
+1. In GitHub Desktop, click "clone a repository from the internet." In the GitHub.com tab, it will list your repos. If your fork isn't there, click the link on the dialog to refresh your repos. Select your fork of ffa-tycoon-parks. Note the destination directory (local path) and click "clone."
 
 1. If it asks how you plan to use the fork, select "to contribute to the parent project."
 
@@ -66,7 +66,7 @@ If you're unfamiliar with git, no problem! You can [install GitHub Desktop](http
 
 1. Select Repository → Push. Then Branch → Create pull request. On the webpage, fill out the details and click "Create pull request." Periodically check on the pull request to see if it has been given feedback or has been merged.
 
-Pull requests trigger an action to verify that all the object files needed are in the `object` directory. If the action fails, check the output and add the missing objects. Object files are stored in `Documents\OpenRCT2\object` on Windows and `~/.config/OpenRCT2/object` everywhere else. Copy the requested files to `object`, commit, and push.
+Pull requests trigger an action to verify that the save includes all custom objects and that the save is compatible with the latest release. If the action fails, check the output.
 
 If any other change is requested, update your park and go back to step 4. If it has been merged, prepare for a new submission. In GitHub Desktop, in the current branch dropdown, select default branch master. You can go back to step 3 to start a new submission.
 
