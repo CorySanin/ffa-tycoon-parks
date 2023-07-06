@@ -52,6 +52,11 @@ function checkSave(file) {
                     reject(notfound);
                 }
             }
+            else if (str.includes(`'ABORT$`)) {
+                clearTimeout(timeout);
+                child.kill();
+                reject(['Park file failed to load.']);
+            }
             else {
                 stdout.push(str);
             }
