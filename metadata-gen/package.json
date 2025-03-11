@@ -1,0 +1,25 @@
+{
+  "name": "ffa-tycoon-parks-metadata-generator",
+  "version": "1.0.0",
+  "description": "Generate metadata for Rollercoaster Tycoon FFA parks",
+  "main": "src/index.ts",
+  "type": "module",
+  "dependencies": {
+    "ky": "1.7.5",
+    "sharp": "0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "5.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CorySanin/ffa-tycoon-parks.git"
+  },
+  "author": "Cory Sanin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CorySanin/ffa-tycoon-parks/issues"
+  },
+  "homepage": "https://github.com/CorySanin/ffa-tycoon-parks#readme"
+}
