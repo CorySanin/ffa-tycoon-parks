@@ -77,4 +77,4 @@ for (const parkfile of parkfiles) {
     metadata.push(await generateMetaData(parkfile));
 }
 
-await fsp.writeFile(METADATAFILE, JSON.stringify(metadata, null, 2), 'utf-8');
+await fsp.writeFile(METADATAFILE, JSON.stringify({parks: metadata}, null, 2), 'utf-8');
