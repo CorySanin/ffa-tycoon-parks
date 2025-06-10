@@ -15,6 +15,7 @@ const PARKSDIR = process.env.PARKSDIR || '/parks/';
 const METADATAFILE = process.env.METADATAFILE || '/distribution/meta.json';
 const SCREENSHOTDIR = process.env.SCREENSHOTDIR || '/distribution/thumbnails/';
 const SCREENSHOTTERURL = requireEnvVar('SCREENSHOTTERURL');
+const SCREENSHOTTERTOKEN = requireEnvVar('SCREENSHOTTERTOKEN');
 
 type ParkMetaData = {
     baseParkName: string;
@@ -72,7 +73,7 @@ const parkfiles = (await fsp.readdir(PARKSDIR, { withFileTypes: true })).filter(
 const metadata: Partial<ParkMetaData>[] = [];
 
 for (const parkfile of parkfiles) {
-    await generateScreenshot(parkfile, SCREENSHOTDIR);
+    // await generateScreenshot(parkfile, SCREENSHOTDIR);
     metadata.push(await generateMetaData(parkfile));
 }
 
