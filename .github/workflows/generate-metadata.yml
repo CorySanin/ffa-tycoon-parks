@@ -1,6 +1,10 @@
 name: Generate metadata
 
 on:
+  workflow_run:
+    workflows: [Build MetadataGen Image]
+    types:
+      - completed
   workflow_dispatch:
     branches: [ master ]
   repository_dispatch:
@@ -38,4 +42,4 @@ jobs:
       run: |
         git config --global user.name 'Metadata Generator'
         git config --global user.email 'ffameta@sanin.dev'
-        (git add -A && git commit -m "Automated report" && git push) || echo "No commit"
+        (git add -A && git commit -m "Update park metadata" && git push) || echo "No commit"
