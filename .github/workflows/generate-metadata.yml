@@ -32,7 +32,7 @@ jobs:
       run: |
         mkdir -p ${{ github.workspace }}/distribution/thumbnails/
         chmod --recursive 777 ${{ github.workspace }}/distribution
-        docker run --rm -v ${{ github.workspace }}/parks:/parks -v ${{ github.workspace }}/distribution:/distribution -e SCREENSHOTTERURL='${{ secrets.SCREENSHOTTERURL }}' -e SCREENSHOTTERTOKEN='${{ secrets.SCREENSHOTTERTOKEN }}' ${{env.IMAGE}}
+        docker run --rm -v ${{ github.workspace }}/parks/economy/:/parks -v ${{ github.workspace }}/distribution:/distribution -e SCREENSHOTTERURL='${{ secrets.SCREENSHOTTERURL }}' -e SCREENSHOTTERTOKEN='${{ secrets.SCREENSHOTTERTOKEN }}' ${{env.IMAGE}}
     
     - name: Commit metadata
       run: |
