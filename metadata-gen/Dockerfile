@@ -1,6 +1,6 @@
-FROM node:alpine3.19 as base
+FROM node:alpine3.21 AS base
 FROM corysanin/openrct2-cli:latest-alpine AS rct2
-FROM base as install
+FROM base AS install
 
 WORKDIR /usr/src/meta
 
