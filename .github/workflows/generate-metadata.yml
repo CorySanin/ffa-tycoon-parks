@@ -38,4 +38,4 @@ jobs:
       run: |
         git config --global user.name 'Metadata Generator'
         git config --global user.email 'ffameta@sanin.dev'
-        (git commit -am "Automated report" && git push) || echo "Nothing to commit."
+        (git add -A && git commit -m "Automated report" && git push) || echo "No commit"
