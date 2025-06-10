@@ -1,6 +1,6 @@
 FROM corysanin/openrct2-cli:latest-alpine AS rct2
 
-FROM node:alpine3.17 AS deploy
+FROM node:alpine3.21 AS deploy
 
 WORKDIR /usr/src/ci-check
 
