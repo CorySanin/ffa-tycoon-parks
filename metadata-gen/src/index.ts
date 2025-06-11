@@ -44,6 +44,7 @@ async function generateScreenshot(parkfile: string, outputDir: string): Promise<
     body.append('park', new Blob([await fsp.readFile(parkfile)], { type: 'application/octet-stream' }));
     const response = await ky.post(`${SCREENSHOTTERURL}/upload?zoom=${zoom}`, {
         body,
+        timeout: 60000,
         headers: {
             Authorization: `Bearer ${SCREENSHOTTERTOKEN}`
         }
