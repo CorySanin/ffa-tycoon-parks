@@ -43,7 +43,10 @@ async function generateScreenshot(parkfile: string, outputDir: string): Promise<
     const height = 360;
     body.append('park', new Blob([await fsp.readFile(parkfile)], { type: 'application/octet-stream' }));
     const response = await ky.post(`${SCREENSHOTTERURL}/upload?zoom=${zoom}`, {
-        body
+        body,
+        headers: {
+            Authorization: `Bearer ${SCREENSHOTTERTOKEN}`
+        }
     });
     if (!response.ok || !response.body) {
         throw new Error(`Failed to generate screenshot for ${parkfile}: ${response.statusText}`);
@@ -73,7 +76,7 @@ const parkfiles = (await fsp.readdir(PARKSDIR, { withFileTypes: true })).filter(
 const metadata: Partial<ParkMetaData>[] = [];
 
 for (const parkfile of parkfiles) {
-    // await generateScreenshot(parkfile, SCREENSHOTDIR);
+    await generateScreenshot(parkfile, SCREENSHOTDIR);
     metadata.push(await generateMetaData(parkfile));
 }
 
