@@ -2,131 +2,163 @@
   "parks": [
     {
       "baseParkName": "annelid_archipelago",
-      "prettyParkName": "Annelid Archipelago"
+      "prettyParkName": "Annelid Archipelago",
+      "source": "Custom"
     },
     {
       "baseParkName": "arid_heights",
-      "prettyParkName": "Arid Heights"
+      "prettyParkName": "Arid Heights",
+      "source": "RollerCoaster Tycoon: Loopy Landscapes"
     },
     {
       "baseParkName": "citizens_divide",
-      "prettyParkName": "Citizens Divide"
+      "prettyParkName": "Citizens Divide",
+      "source": "Custom"
     },
     {
       "baseParkName": "cold_rock_river",
-      "prettyParkName": "Cold Rock River"
+      "prettyParkName": "Cold Rock River",
+      "source": "Custom"
     },
     {
       "baseParkName": "dirty_dusty_dome",
-      "prettyParkName": "Dirty Dusty Dome"
+      "prettyParkName": "Dirty Dusty Dome",
+      "source": "Custom"
     },
     {
       "baseParkName": "dusty_greens",
-      "prettyParkName": "Dusty Greens"
+      "prettyParkName": "Dusty Greens",
+      "source": "RollerCoaster Tycoon 2"
     },
     {
       "baseParkName": "dynamite_dunes",
-      "prettyParkName": "Dynamite Dunes"
+      "prettyParkName": "Dynamite Dunes",
+      "source": "RollerCoaster Tycoon"
     },
     {
       "baseParkName": "evergreen_gardens",
-      "prettyParkName": "Evergreen Gardens"
+      "prettyParkName": "Evergreen Gardens",
+      "source": "RollerCoaster Tycoon"
     },
     {
       "baseParkName": "extreme_heights",
-      "prettyParkName": "Extreme Heights"
+      "prettyParkName": "Extreme Heights",
+      "source": "RollerCoaster Tycoon 2"
     },
     {
       "baseParkName": "fjords_of_norway",
-      "prettyParkName": "Fjords Of Norway"
+      "prettyParkName": "Fjords Of Norway",
+      "source": "Custom"
     },
     {
       "baseParkName": "forest_frontiers",
-      "prettyParkName": "Forest Frontiers"
+      "prettyParkName": "Forest Frontiers",
+      "source": "RollerCoaster Tycoon"
     },
     {
       "baseParkName": "geoffrey_gardens",
-      "prettyParkName": "Geoffrey Gardens"
+      "prettyParkName": "Geoffrey Gardens",
+      "source": "RollerCoaster Tycoon: Corkscrew Follies"
     },
     {
       "baseParkName": "gravity_gardens",
-      "prettyParkName": "Gravity Gardens"
+      "prettyParkName": "Gravity Gardens",
+      "source": "RollerCoaster Tycoon 2"
     },
     {
       "baseParkName": "jungly_mtn",
-      "prettyParkName": "Jungly Mtn"
+      "prettyParkName": "Jungly Mtn",
+      "source": "Custom"
     },
     {
       "baseParkName": "leafy_lake",
-      "prettyParkName": "Leafy Lake"
+      "prettyParkName": "Leafy Lake",
+      "source": "RollerCoaster Tycoon"
     },
     {
       "baseParkName": "mega_park",
-      "prettyParkName": "Mega Park"
+      "prettyParkName": "Mega Park",
+      "source": "RollerCoaster Tycoon"
     },
     {
       "baseParkName": "pc_ported",
-      "prettyParkName": "Pc Ported"
+      "prettyParkName": "Pc Ported",
+      "source": "Custom"
     },
     {
       "baseParkName": "peninsula",
-      "prettyParkName": "Peninsula"
+      "prettyParkName": "Peninsula",
+      "source": "Custom"
     },
     {
       "baseParkName": "razor_rocks",
-      "prettyParkName": "Razor Rocks"
+      "prettyParkName": "Razor Rocks",
+      "source": "RollerCoaster Tycoon: Loopy Landscapes"
     },
     {
       "baseParkName": "red_sand_swamp",
-      "prettyParkName": "Red Sand Swamp"
+      "prettyParkName": "Red Sand Swamp",
+      "source": "Custom"
     },
     {
       "baseParkName": "six_flags_free_for_all",
-      "prettyParkName": "Six Flags Free For All"
+      "prettyParkName": "Six Flags Free For All",
+      "source": "Custom"
     },
     {
       "baseParkName": "suburban_trials",
-      "prettyParkName": "Suburban Trials"
+      "prettyParkName": "Suburban Trials",
+      "source": "Custom"
     },
     {
       "baseParkName": "sweaty_swamps",
-      "prettyParkName": "Sweaty Swamps"
+      "prettyParkName": "Sweaty Swamps",
+      "source": "Custom"
     },
     {
       "baseParkName": "three_monkeys_park",
-      "prettyParkName": "Three Monkeys Park"
+      "prettyParkName": "Three Monkeys Park",
+      "source": "RollerCoaster Tycoon: Corkscrew Follies"
     },
     {
       "baseParkName": "train_panic",
-      "prettyParkName": "Train Panic"
+      "prettyParkName": "Train Panic",
+      "source": "Custom"
     },
     {
       "baseParkName": "troglodyte_river",
-      "prettyParkName": "Troglodyte River"
+      "prettyParkName": "Troglodyte River",
+      "source": "Custom"
     },
     {
       "baseParkName": "two_ponds",
-      "prettyParkName": "Two Ponds"
+      "prettyParkName": "Two Ponds",
+      "source": "Custom"
     },
     {
       "baseParkName": "twoway_aqua_lakes",
-      "prettyParkName": "Twoway Aqua Lakes"
+      "prettyParkName": "Twoway Aqua Lakes",
+      "source": "Custom"
     },
     {
       "baseParkName": "vine_canyon",
-      "prettyParkName": "Vine Canyon"
+      "prettyParkName": "Vine Canyon",
+      "source": "Custom"
     },
     {
       "baseParkName": "wild_water_gap",
-      "prettyParkName": "Wild Water Gap"
+      "prettyParkName": "Wild Water Gap",
+      "source": "Custom"
     },
     {
       "baseParkName": "worm_ski_resort",
-      "prettyParkName": "Worm Ski Resort"
+      "prettyParkName": "Worm Ski Resort",
+      "source": "Custom"
     },
     {
       "baseParkName": "zoo_land",
-      "prettyParkName": "Zoo Land"
+      "prettyParkName": "Zoo Land",
+      "source": "Custom"
     }
   ]
 }
