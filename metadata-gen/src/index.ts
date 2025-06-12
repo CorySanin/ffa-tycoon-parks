@@ -2,6 +2,7 @@ import sharp from 'sharp';
 import * as fsp from 'node:fs/promises';
 import path from 'path';
 import ky from 'ky';
+import { getSourceGame } from './source-identifier.ts';
 import type { OutputInfo } from 'sharp';
 
 function requireEnvVar(varName: string): string {
@@ -67,9 +68,11 @@ async function generateScreenshot(parkfile: string, outputDir: string): Promise<
 }
 
 async function generateMetaData(parkfile: string): Promise<Partial<ParkMetaData>> {
+    const realParkName = prettyParkName(parkfile); // TODO: get park name from save file
     return {
         baseParkName: baseParkName(parkfile),
-        prettyParkName: prettyParkName(parkfile)
+        prettyParkName: realParkName,
+        source: getSourceGame(realParkName),
     };
 }
 
@@ -81,4 +84,4 @@ for (const parkfile of parkfiles) {
     metadata.push(await generateMetaData(parkfile));
 }
 
-await fsp.writeFile(METADATAFILE, JSON.stringify({parks: metadata}, null, 2), 'utf-8');
+await fsp.writeFile(METADATAFILE, JSON.stringify({ parks: metadata }, null, 2), 'utf-8');
