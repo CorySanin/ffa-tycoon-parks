@@ -1,9 +1,7 @@
-import sharp from 'sharp';
-import * as fsp from 'node:fs/promises';
 import path from 'path';
+import * as fsp from 'fs/promises';
 import ky from 'ky';
 import { getSourceGame } from './source-identifier.ts';
-import type { OutputInfo } from 'sharp';
 
 function requireEnvVar(varName: string): string {
     if (!(varName in process.env) || !process.env[varName]) {
@@ -17,6 +15,18 @@ const METADATAFILE = process.env.METADATAFILE || '/distribution/meta.json';
 const SCREENSHOTDIR = process.env.SCREENSHOTDIR || '/distribution/thumbnails/';
 const SCREENSHOTTERURL = requireEnvVar('SCREENSHOTTERURL');
 const SCREENSHOTTERTOKEN = requireEnvVar('SCREENSHOTTERTOKEN');
+
+type NumericRep = number | string;
+
+type ScreenshotOptions = {
+    type: 'cropped',
+    zoom?: NumericRep,
+    rotation?: NumericRep,
+    width: NumericRep,
+    height: NumericRep,
+    x?: NumericRep,
+    y?: NumericRep
+}
 
 type ParkMetaData = {
     baseParkName: string;
@@ -36,14 +46,25 @@ function prettyParkName(parkfile: string): string {
     return baseParkName(parkfile).split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
-async function generateScreenshot(parkfile: string, outputDir: string): Promise<OutputInfo> {
+function appendScreenshotOptions(body: FormData, options: ScreenshotOptions) {
+    for (let key in options) {
+        body.append(key, options[key]);
+    }
+}
+
+async function generateScreenshot(parkfile: string, outputDir: string): Promise<void> {
     const screenshotPath = path.join(outputDir, `${baseParkName(parkfile)}.png`);
-    const zoom = 2;
+    const screenshotOptions: ScreenshotOptions = {
+        type: 'cropped',
+        width: 640,
+        height: 360,
+        rotation: 0,
+        zoom: 2
+    }
     const body = new FormData();
-    const width = 640;
-    const height = 360;
     body.append('park', new Blob([await fsp.readFile(parkfile)], { type: 'application/octet-stream' }));
-    const response = await ky.post(`${SCREENSHOTTERURL}/upload?zoom=${zoom}`, {
+    appendScreenshotOptions(body, screenshotOptions);
+    const response = await ky.post(`${SCREENSHOTTERURL}/upload`, {
         body,
         timeout: 60000,
         headers: {
@@ -53,18 +74,7 @@ async function generateScreenshot(parkfile: string, outputDir: string): Promise<
     if (!response.ok || !response.body) {
         throw new Error(`Failed to generate screenshot for ${parkfile}: ${response.statusText}`);
     }
-    const s = sharp(await response.arrayBuffer());
-    const imgMetadata = await s.metadata();
-    if (!imgMetadata || !imgMetadata.width || !imgMetadata.height) {
-        throw new Error(`Failed to extract metadata for incoming screenshot`);
-    }
-    if (imgMetadata.width < width || imgMetadata.height < height) {
-        s.resize(width, height);
-    }
-    else {
-        s.extract({ left: Math.floor(imgMetadata.width / 2) - (width / 2), top: Math.floor(imgMetadata.height / 2) - (height / 2), width, height })
-    }
-    return s.png().toFile(screenshotPath);
+    await fsp.writeFile(screenshotPath, response.body);
 }
 
 async function generateMetaData(parkfile: string): Promise<Partial<ParkMetaData>> {

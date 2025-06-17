@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots": ["./metadata-gen/node_modules/@types"],
     "lib": ["ESNext"],
     "module": "NodeNext",
     "target": "ESNext",

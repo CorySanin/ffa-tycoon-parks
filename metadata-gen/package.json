@@ -5,11 +5,10 @@
   "main": "src/index.ts",
   "type": "module",
   "dependencies": {
-    "ky": "1.8.1",
-    "sharp": "0.34.2"
+    "ky": "1.8.1"
   },
   "devDependencies": {
-    "@types/node": "^24.0.0",
+    "@types/node": "^24.0.3",
     "typescript": "5.8.3"
   },
   "repository": {
