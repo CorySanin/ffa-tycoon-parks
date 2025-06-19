@@ -100,3 +100,5 @@ public
 
 # custom .gitignore
 *:Zone.Identifier
+plugin/lib/*
+!plugin/lib/authoring.js
