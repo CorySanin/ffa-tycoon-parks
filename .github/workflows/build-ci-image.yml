@@ -51,6 +51,14 @@ jobs:
           ${{ env.GH_REGISTRY }}/${{ env.IMAGE_NAME }}
         tags: |
           type=raw,value=ci
+    
+    - name: Create plugin
+      run: |
+        cd plugin
+        npm ci
+        npm run build
+        cd ..
+        cp plugin/lib/ci.js ci-check/
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v6
