@@ -21,11 +21,16 @@ A park must meet this requirements in order to be considered for the FFA Tycoon 
     - Scenery/general aesthetic
     - Climate
     - Difficulty
-- One of each type of basic amenity
+- One of each type of basic amenity pre-placed in the park
     - Food
     - Drink
     - Restroom
 - At least one ride (optional but recommended)
+- Proper metadata
+    - Park name in game is accurate
+    - Park description is descriptive/not generic
+    - Authorship credit(s) embedded in the save (tool coming soon)
+    - Coordinates for generating a screenshot (tool coming soon)
 
 ## Preparing Park for Submission
 
@@ -81,3 +86,11 @@ Make sure default branch master is the current branch. Then select Repository â†
 Type the following into the terminal and push enter: `git pull upstream master`
 
 Close the terminal window and return to GitHub Desktop. You can go back to step 3 to start a new submission.
+
+## Generating Metadata
+
+Github actions automatically update park metadata in the `distribution` directory. However you can run the docker compose project to do a dry-run:
+
+```
+docker compose up
+```

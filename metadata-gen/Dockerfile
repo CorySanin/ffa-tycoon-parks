@@ -6,7 +6,7 @@ WORKDIR /usr/src/meta
 
 COPY ./package*json ./
 
-RUN npm install --only=production
+RUN npm install --omit=dev
 
 COPY . .
 

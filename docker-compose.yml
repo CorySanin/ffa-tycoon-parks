@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+   ffa-screenshotter:
+      container_name: ffa-screenshotter
+      image: corysanin/rct-screenshotter
+      volumes:
+         - "./ffa-tycoon-parks/object:/home/node/.config/OpenRCT2/object/ffa:ro"
+         # replace with absolute path:
+         - ~/.config/OpenRCT2/object:/home/node/.config/OpenRCT2/object/extra:ro
+         - ~/.steam/steam/steamapps/common/Rollercoaster Tycoon 2:/rct2
+         - ~/.steam/steam/steamapps/common/RollerCoaster Tycoon Deluxe:/rct1
+      restart: no
+      ports: []
+         # - 8080:8080 # expose for token generation
+      environment:
+         TOKENPORT: 8081
+         TOKENSECRET: $SCREENSHOTSECRET
+         TOKENEXP: '5y'
+
+   ffa-metadata-gen:
+      container_name: ffa-metadata-gen
+      build:
+         context: ./metadata-gen/
+      restart: no
+      depends_on:
+         - ffa-screenshotter
+      volumes:
+         - ./parks/economy/:/parks:ro
+         - ./distribution:/distribution
+      environment:
+         SCREENSHOTTERURL: "http://ffa-screenshotter:8081"
+         SCREENSHOTTERTOKEN: $SCREENSHOTTERTOKEN
