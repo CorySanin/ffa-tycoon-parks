@@ -102,3 +102,4 @@ public
 *:Zone.Identifier
 plugin/lib/*
 !plugin/lib/authoring.js
+metadata-gen/metadata-read.js

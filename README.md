@@ -92,5 +92,8 @@ Close the terminal window and return to GitHub Desktop. You can go back to step 
 Github actions automatically update park metadata in the `distribution` directory. However you can run the docker compose project to do a dry-run:
 
 ```
+cd plugin && npm install && npm run build && cd ..
+ln plugin/lib/metadata-read.js metadata-gen/
+ln -sf .env.dev .env
 docker compose up
 ```

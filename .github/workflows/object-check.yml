@@ -1,6 +1,10 @@
 name: Object Check
 
 on:
+  workflow_run:
+    workflows: [Build CI Image]
+    types:
+      - completed
   push:
     branches: [ master ]
   pull_request:

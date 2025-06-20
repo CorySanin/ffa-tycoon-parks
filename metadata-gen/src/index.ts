@@ -1,5 +1,6 @@
 import path from 'path';
 import * as fsp from 'fs/promises';
+import { spawn } from 'child_process';
 import ky from 'ky';
 import { getSourceGame } from './source-identifier.ts';
 
@@ -15,6 +16,7 @@ const METADATAFILE = process.env.METADATAFILE || '/distribution/meta.json';
 const SCREENSHOTDIR = process.env.SCREENSHOTDIR || '/distribution/thumbnails/';
 const SCREENSHOTTERURL = requireEnvVar('SCREENSHOTTERURL');
 const SCREENSHOTTERTOKEN = requireEnvVar('SCREENSHOTTERTOKEN');
+const CHILDPROCESSTIMEOUT = 120000;
 
 type NumericRep = number | string;
 
@@ -32,9 +34,11 @@ type ParkMetaData = {
     baseParkName: string;
     prettyParkName: string;
     description: string;
+    dimensions: { x: number, y: number };
     existingRides: string[];
     inventionList: string[];
     source: string;
+    authors: string[];
 };
 
 function baseParkName(parkfile: string): string {
@@ -50,6 +54,35 @@ function appendScreenshotOptions(body: FormData, options: ScreenshotOptions) {
     for (let key in options) {
         body.append(key, options[key]);
     }
+}
+
+function loadPark(parkfile: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+        const proc = spawn('openrct2-cli', [parkfile], {
+            stdio: ['ignore', process.stdout, process.stderr]
+        });
+        const to = setTimeout(async () => {
+            proc.kill();
+            reject(new Error('Timed out'));
+        }, CHILDPROCESSTIMEOUT);
+        proc.on('exit', (code): void => {
+            clearTimeout(to);
+            if (code && code !== 0) {
+                console.log(code);
+                reject(new Error(`exited with ${code}`));
+            }
+            else {
+                resolve();
+            }
+        });
+    });
+}
+
+async function readParkFile(parkfile: string): Promise<Partial<ParkMetaData>> {
+    await loadPark(parkfile);
+    const pluginStoragePath: string = path.join(process.env['HOME'], '.config', 'OpenRCT2', 'plugin.store.json');
+    const pluginStorage: { meta: Partial<ParkMetaData> } = JSON.parse((await fsp.readFile(pluginStoragePath)).toString());
+    return pluginStorage.meta;
 }
 
 async function generateScreenshot(parkfile: string, outputDir: string): Promise<void> {
@@ -77,21 +110,16 @@ async function generateScreenshot(parkfile: string, outputDir: string): Promise<
     await fsp.writeFile(screenshotPath, response.body);
 }
 
-async function generateMetaData(parkfile: string): Promise<Partial<ParkMetaData>> {
-    const realParkName = prettyParkName(parkfile); // TODO: get park name from save file
-    return {
-        baseParkName: baseParkName(parkfile),
-        prettyParkName: realParkName,
-        source: getSourceGame(realParkName),
-    };
-}
-
 const parkfiles = (await fsp.readdir(PARKSDIR, { withFileTypes: true })).filter(f => f.isFile()).map(f => path.join(PARKSDIR, f.name));
 const metadata: Partial<ParkMetaData>[] = [];
 
 for (const parkfile of parkfiles) {
+    const meta: Partial<ParkMetaData> = await readParkFile(parkfile);
+    meta.baseParkName = baseParkName(parkfile);
+    meta.prettyParkName = meta.prettyParkName || prettyParkName(parkfile);
+    meta.source = getSourceGame(meta.prettyParkName);
     await generateScreenshot(parkfile, SCREENSHOTDIR);
-    metadata.push(await generateMetaData(parkfile));
+    metadata.push(meta);
 }
 
 await fsp.writeFile(METADATAFILE, JSON.stringify({ parks: metadata }, null, 2), 'utf-8');
