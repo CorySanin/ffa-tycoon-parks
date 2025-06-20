@@ -16,7 +16,7 @@ WORKDIR /usr/src/meta
 
 RUN apk add --no-cache rsync ca-certificates libpng libzip libcurl freetype fontconfig icu &&  \
  mkdir -p /home/node/.config/OpenRCT2/plugin /home/node/.config/OpenRCT2/object && \
- ln -sf /usr/src/meta/plugin.js /home/node/.config/OpenRCT2/plugin/ && \
+ ln -sf /usr/src/meta/metadata-read.js /home/node/.config/OpenRCT2/plugin/ && \
  chown -R node:node /home/node/.config/OpenRCT2
 
 COPY --from=rct2 /usr /usr
