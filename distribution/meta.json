@@ -1,163 +1,437 @@
 {
   "parks": [
     {
-      "baseParkName": "annelid_archipelago",
       "prettyParkName": "Annelid Archipelago",
+      "description": "The big island looks like a WORM, haha! Map collaboration by RGTM & SlyWerewolfAJ, for FFA-Tycoon.com.",
+      "dimensions": {
+        "x": 258,
+        "y": 258
+      },
+      "existingRides": [
+        "Wacky Worm"
+      ],
+      "baseParkName": "annelid_archipelago",
       "source": "Custom"
     },
     {
-      "baseParkName": "arid_heights",
       "prettyParkName": "Arid Heights",
+      "description": "Anything goes in this desert park. - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "A Whole New World"
+      ],
+      "baseParkName": "arid_heights",
       "source": "RollerCoaster Tycoon: Loopy Landscapes"
     },
     {
+      "prettyParkName": "Citizen's Divide",
+      "description": "SlyWerewolfAJ's 4th Submitted Map",
+      "dimensions": {
+        "x": 202,
+        "y": 202
+      },
+      "existingRides": [
+        "Bridgeside Lift #1 (Prebuilt)",
+        "Bridgeside Lift #2 (Prebuilt)"
+      ],
       "baseParkName": "citizens_divide",
-      "prettyParkName": "Citizens Divide",
       "source": "Custom"
     },
     {
-      "baseParkName": "cold_rock_river",
       "prettyParkName": "Cold Rock River",
+      "description": "The climate in this land is cold. ",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Pipeweed"
+      ],
+      "baseParkName": "cold_rock_river",
       "source": "Custom"
     },
     {
-      "baseParkName": "dirty_dusty_dome",
       "prettyParkName": "Dirty Dusty Dome",
+      "description": "This land  is hot and dry,  it  is said that rain fall only once every five years. The winds are quite strong and dirtstorm is more likely.",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Dust Storm Explained"
+      ],
+      "baseParkName": "dirty_dusty_dome",
       "source": "Custom"
     },
     {
-      "baseParkName": "dusty_greens",
       "prettyParkName": "Dusty Greens",
+      "description": "Situated near a highway junction in the desert, Dusty Greens is an opportunity to develop a small golf resort into a thriving theme park - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Old West Holes",
+        "Oasis Holes"
+      ],
+      "baseParkName": "dusty_greens",
       "source": "RollerCoaster Tycoon 2"
     },
     {
-      "baseParkName": "dynamite_dunes",
       "prettyParkName": "Dynamite Dunes",
+      "description": "Built in the middle of the desert, this park contains a roller coaster and plenty of available space - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "Dynamite Blaster"
+      ],
+      "baseParkName": "dynamite_dunes",
       "source": "RollerCoaster Tycoon"
     },
     {
-      "baseParkName": "evergreen_gardens",
       "prettyParkName": "Evergreen Gardens",
+      "description": "Convert the beautiful Evergreen Gardens into a thriving theme park - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "Evergreen Carousel",
+        "Swans"
+      ],
+      "baseParkName": "evergreen_gardens",
       "source": "RollerCoaster Tycoon"
     },
     {
-      "baseParkName": "extreme_heights",
       "prettyParkName": "Extreme Heights",
+      "description": "Your challenge is to expand this desert park to attract people seeking the ultimate free for all experience - Edited by RGTM for  FFA-Tycoon.com",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Flaming Fury"
+      ],
+      "baseParkName": "extreme_heights",
       "source": "RollerCoaster Tycoon 2"
     },
     {
-      "baseParkName": "fjords_of_norway",
       "prettyParkName": "Fjords Of Norway",
+      "description": "No details yet",
+      "dimensions": {
+        "x": 256,
+        "y": 256
+      },
+      "existingRides": [
+        "Speed Monster",
+        "Fjord Merry-Go-Round"
+      ],
+      "baseParkName": "fjords_of_norway",
       "source": "Custom"
     },
     {
-      "baseParkName": "forest_frontiers",
       "prettyParkName": "Forest Frontiers",
+      "description": "Deep in the forest, build a thriving theme park in a large cleared area - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "Merry-Go-Round",
+        "Scrambled Eggs",
+        "Swinging Ship"
+      ],
+      "baseParkName": "forest_frontiers",
       "source": "RollerCoaster Tycoon"
     },
     {
-      "baseParkName": "geoffrey_gardens",
       "prettyParkName": "Geoffrey Gardens",
+      "description": "A large garden park needs turning into a thriving theme park - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "Spanish Bambini",
+        "Rowboats"
+      ],
+      "baseParkName": "geoffrey_gardens",
       "source": "RollerCoaster Tycoon: Corkscrew Follies"
     },
     {
-      "baseParkName": "gravity_gardens",
       "prettyParkName": "Gravity Gardens",
+      "description": "Your challenge is to build a thriving theme park in the beautiful Gravity Gardens with strangers - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Treetop Flyer"
+      ],
+      "baseParkName": "gravity_gardens",
       "source": "RollerCoaster Tycoon 2"
     },
     {
+      "prettyParkName": "Jungly Mountain",
+      "description": "No details yet",
+      "dimensions": {
+        "x": 256,
+        "y": 256
+      },
+      "existingRides": [
+        "Small Dragon's Run",
+        "Arrival Ship",
+        "Golden Condor"
+      ],
       "baseParkName": "jungly_mtn",
-      "prettyParkName": "Jungly Mtn",
       "source": "Custom"
     },
     {
-      "baseParkName": "leafy_lake",
       "prettyParkName": "Leafy Lake",
+      "description": "Starting from scratch, build a theme park around a large lake. Anything Goes! - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "Leafy Rowboats"
+      ],
+      "baseParkName": "leafy_lake",
       "source": "RollerCoaster Tycoon"
     },
     {
-      "baseParkName": "mega_park",
       "prettyParkName": "Mega Park",
+      "description": "Just for fun!",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "Mega Wheel"
+      ],
+      "baseParkName": "mega_park",
       "source": "RollerCoaster Tycoon"
     },
     {
-      "baseParkName": "pc_ported",
       "prettyParkName": "Pc Ported",
+      "description": "5th Map submitted by SlyWerewolfAJ",
+      "dimensions": {
+        "x": 226,
+        "y": 226
+      },
+      "existingRides": [
+        "Hall of Mirrors",
+        "4D Max"
+      ],
+      "baseParkName": "pc_ported",
       "source": "Custom"
     },
     {
-      "baseParkName": "peninsula",
       "prettyParkName": "Peninsula",
+      "description": "A parking lot project was canceled due to a local protest seekng to preserve the environment. The work had already began next to an old mining site.",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Last Machine on the Peninsula"
+      ],
+      "baseParkName": "peninsula",
       "source": "Custom"
     },
     {
-      "baseParkName": "razor_rocks",
       "prettyParkName": "Razor Rocks",
+      "description": "Your task is to collaborate with strangers and build a park in amongst Razor Rocks - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "Rock and Roll"
+      ],
+      "baseParkName": "razor_rocks",
       "source": "RollerCoaster Tycoon: Loopy Landscapes"
     },
     {
-      "baseParkName": "red_sand_swamp",
       "prettyParkName": "Red Sand Swamp",
+      "description": "In a desertic wasteland a few craters still hold enough water for the only trees in the area. This area could be beautiful, but as no-one lives nearby  it could also be home of  the ugliest coaster anyway.",
+      "dimensions": {
+        "x": 252,
+        "y": 252
+      },
+      "existingRides": [
+        "Canyon Digger"
+      ],
+      "baseParkName": "red_sand_swamp",
       "source": "Custom"
     },
     {
-      "baseParkName": "six_flags_free_for_all",
       "prettyParkName": "Six Flags Free For All",
+      "description": "Build your own design of Six Flags park - Either build rides from other Six Flags parks or design and build your own rides - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 154,
+        "y": 154
+      },
+      "existingRides": [
+        "Grand Carousel"
+      ],
+      "baseParkName": "six_flags_free_for_all",
       "source": "Custom"
     },
     {
-      "baseParkName": "suburban_trials",
       "prettyParkName": "Suburban Trials",
+      "description": "Somewhere outside Suburbia, you must build a park with strangers - by SlyWerewolfAJ, for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 202,
+        "y": 202
+      },
+      "existingRides": [
+        "Typhoon",
+        "Beach Side Skate"
+      ],
+      "baseParkName": "suburban_trials",
       "source": "Custom"
     },
     {
-      "baseParkName": "sweaty_swamps",
       "prettyParkName": "Sweaty Swamps",
+      "description": "Ugh, so slimy and wet... - by SlyWerewolfAJ for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 202,
+        "y": 202
+      },
+      "existingRides": [
+        "Noxious Gases"
+      ],
+      "baseParkName": "sweaty_swamps",
       "source": "Custom"
     },
     {
-      "baseParkName": "three_monkeys_park",
       "prettyParkName": "Three Monkeys Park",
+      "description": "Central to this large developing park is a giant triple-track racing/dueling steel coaster - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 128,
+        "y": 128
+      },
+      "existingRides": [
+        "Speak No Evil",
+        "Hear No Evil",
+        "See No Evil"
+      ],
+      "baseParkName": "three_monkeys_park",
       "source": "RollerCoaster Tycoon: Corkscrew Follies"
     },
     {
-      "baseParkName": "train_panic",
       "prettyParkName": "Train Panic",
+      "description": "Hmm, there's not a whole lot of trains to panic about. ...yet - by SlyWerewolfAJ, for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 195,
+        "y": 195
+      },
+      "existingRides": [
+        "Engine Stalling (Pre-build)",
+        "Poor Airmanship (Pre-build)"
+      ],
+      "baseParkName": "train_panic",
       "source": "Custom"
     },
     {
-      "baseParkName": "troglodyte_river",
       "prettyParkName": "Troglodyte River",
+      "description": "The area was unhabited by cavemans long time ago. Some of them prefered flat areas,some others beaches, some liked mountains or river, they were all very happy here and left holes everywhere. Now a modern bridge cross the river and an fun park is growing",
+      "dimensions": {
+        "x": 187,
+        "y": 187
+      },
+      "existingRides": [
+        "Helter-Skelter"
+      ],
+      "baseParkName": "troglodyte_river",
       "source": "Custom"
     },
     {
-      "baseParkName": "two_ponds",
       "prettyParkName": "Two Ponds",
+      "description": "There are two of them!",
+      "dimensions": {
+        "x": 122,
+        "y": 122
+      },
+      "existingRides": [
+        "Rail Crazy"
+      ],
+      "baseParkName": "two_ponds",
       "source": "Custom"
     },
     {
+      "prettyParkName": "Aqua Lake",
+      "description": "No details yet",
+      "dimensions": {
+        "x": 258,
+        "y": 258
+      },
+      "existingRides": [
+        "Megatanks"
+      ],
       "baseParkName": "twoway_aqua_lakes",
-      "prettyParkName": "Twoway Aqua Lakes",
       "source": "Custom"
     },
     {
-      "baseParkName": "vine_canyon",
       "prettyParkName": "Vine Canyon",
+      "description": "With the help of strangers, turn this natural tourist attraction into a thriving theme park - by SlyWerewolfAJ, for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 165,
+        "y": 165
+      },
+      "existingRides": [
+        "Lift 1",
+        "Lift 2"
+      ],
+      "baseParkName": "vine_canyon",
       "source": "Custom"
     },
     {
-      "baseParkName": "wild_water_gap",
       "prettyParkName": "Wild Water Gap",
+      "description": "For many millennia, a river carved through a large mountainside. Turn this popular hiking spot into a thriving theme park. Created by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 202,
+        "y": 202
+      },
+      "existingRides": [
+        "Lookout Tower"
+      ],
+      "baseParkName": "wild_water_gap",
       "source": "Custom"
     },
     {
+      "prettyParkName": "WORM Ski Resort",
+      "description": "Anything goes on this snowy slalom",
+      "dimensions": {
+        "x": 167,
+        "y": 167
+      },
+      "existingRides": [
+        "WORM Ski Lift",
+        "Snow Cups"
+      ],
       "baseParkName": "worm_ski_resort",
-      "prettyParkName": "Worm Ski Resort",
       "source": "Custom"
     },
     {
-      "baseParkName": "zoo_land",
       "prettyParkName": "Zoo Land",
+      "description": "A local zoo with several theme park attractions wants to invest more heavily in rides and coasters. Map by WORM, created for FFA-Tycoon",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Zoo Land Transport",
+        "Penguin House",
+        "Whale Show"
+      ],
+      "baseParkName": "zoo_land",
       "source": "Custom"
     }
   ]
