@@ -34,6 +34,8 @@ A park must meet this requirements in order to be considered for the FFA Tycoon 
 
 ## Preparing Park for Submission
 
+Use the [authorship plugin](plugin/lib/authoring.js) to add yourself as an author to the park file. This is displayed on the maps list on ffa-tycoon.com
+
 There are two types of scenarios: sandbox and economy. The process of converting one to the other can be quite tedious, so it is recommended that you first prepare an economy-oriented park (that is, enable the cash machine stall) and then put that through the [save prep tool](https://prep.ffa-tycoon.com/).
 
 The tool will output two saves. One will have money enabled and each player will start with the amount specified in the "economy funds" field. The other will have money disabled and the cash machine removed from the object selection. It also resets the date, removes all guests, sets the scenario goal to "have fun," and some other changes to make all parks in the pool a bit more uniform. Check out the [save prep source code](https://gitlab.com/sanin.dev/ffa-tycoon-scenario-prep/-/blob/saveprep/src/openrct2/cmdline/PrepCommand.cpp) to dig deeper.
