@@ -1,3 +1,4 @@
+export type TypescriptBad = true;
 declare global {
     type Thumbnail = {
         zoom: number,

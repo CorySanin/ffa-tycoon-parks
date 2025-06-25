@@ -28,7 +28,8 @@ type ScreenshotOptions = {
     width: NumericRep,
     height: NumericRep,
     x?: NumericRep,
-    y?: NumericRep
+    y?: NumericRep,
+    z?: NumericRep
 }
 
 type ParkMetaData = {
@@ -97,10 +98,11 @@ async function generateScreenshot(parkfile: string, outputDir: string, meta: Par
         zoom: 2
     }
     if (meta.thumbnail) {
-        screenshotOptions.rotation = meta.thumbnail.rotation;
-        screenshotOptions.zoom = meta.thumbnail.zoom;
-        screenshotOptions.x = meta.thumbnail.x;
-        screenshotOptions.y = meta.thumbnail.y;
+        screenshotOptions.rotation = `${meta.thumbnail.rotation}`;
+        screenshotOptions.zoom = `${meta.thumbnail.zoom}`;
+        screenshotOptions.x = `${meta.thumbnail.x}`;
+        screenshotOptions.y = `${meta.thumbnail.y}`;
+        screenshotOptions.z = '24';
     }
     const body = new FormData();
     body.append('park', new Blob([await fsp.readFile(parkfile)], { type: 'application/octet-stream' }));
