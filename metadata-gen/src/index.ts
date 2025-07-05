@@ -1,3 +1,4 @@
+/// <reference path="../../plugin/types/common.d.ts" />
 import path from 'path';
 import * as fsp from 'fs/promises';
 import { spawn } from 'child_process';
@@ -27,7 +28,8 @@ type ScreenshotOptions = {
     width: NumericRep,
     height: NumericRep,
     x?: NumericRep,
-    y?: NumericRep
+    y?: NumericRep,
+    z?: NumericRep
 }
 
 type ParkMetaData = {
@@ -39,6 +41,7 @@ type ParkMetaData = {
     inventionList: string[];
     source: string;
     authors: string[];
+    thumbnail: Thumbnail;
 };
 
 function baseParkName(parkfile: string): string {
@@ -85,7 +88,7 @@ async function readParkFile(parkfile: string): Promise<Partial<ParkMetaData>> {
     return pluginStorage.meta;
 }
 
-async function generateScreenshot(parkfile: string, outputDir: string): Promise<void> {
+async function generateScreenshot(parkfile: string, outputDir: string, meta: Partial<ParkMetaData>): Promise<void> {
     const screenshotPath = path.join(outputDir, `${baseParkName(parkfile)}.png`);
     const screenshotOptions: ScreenshotOptions = {
         type: 'cropped',
@@ -93,6 +96,13 @@ async function generateScreenshot(parkfile: string, outputDir: string): Promise<
         height: 360,
         rotation: 0,
         zoom: 2
+    }
+    if (meta.thumbnail) {
+        screenshotOptions.rotation = `${meta.thumbnail.rotation}`;
+        screenshotOptions.zoom = `${meta.thumbnail.zoom}`;
+        screenshotOptions.x = `${meta.thumbnail.x}`;
+        screenshotOptions.y = `${meta.thumbnail.y}`;
+        screenshotOptions.z = '24';
     }
     const body = new FormData();
     body.append('park', new Blob([await fsp.readFile(parkfile)], { type: 'application/octet-stream' }));
@@ -118,7 +128,7 @@ for (const parkfile of parkfiles) {
     meta.baseParkName = baseParkName(parkfile);
     meta.prettyParkName = meta.prettyParkName || prettyParkName(parkfile);
     meta.source = getSourceGame(meta.prettyParkName);
-    await generateScreenshot(parkfile, SCREENSHOTDIR);
+    await generateScreenshot(parkfile, SCREENSHOTDIR, meta);
     metadata.push(meta);
 }
 
