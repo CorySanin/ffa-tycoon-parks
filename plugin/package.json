@@ -1,0 +1,16 @@
+{
+  "name": "ffa-tycoon-parks-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "tsc",
+  "scripts": {
+    "gettypes": "mkdir -p ./types && curl https://raw.githubusercontent.com/OpenRCT2/OpenRCT2/develop/distribution/openrct2.d.ts > ./types/openrct2.d.ts",
+    "build": "tsc -p ../tsconfig.plugin.json"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

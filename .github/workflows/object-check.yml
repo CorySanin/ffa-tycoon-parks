@@ -1,6 +1,10 @@
 name: Object Check
 
 on:
+  workflow_run:
+    workflows: [Build CI Image]
+    types:
+      - completed
   push:
     branches: [ master ]
   pull_request:
@@ -10,22 +14,23 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    env:
+      IMAGE: ghcr.io/corysanin/ffa-tycoon-parks:ci
     permissions:
       contents: read
       packages: write
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
           fetch-depth: 2
 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag "ci-check:latest"
+    - name: Pull image from GitHub Container Registry
+      run: docker pull ${{ env.IMAGE }}
 
     - name: Run check
       run: |
         for file in ${{ github.workspace }}/parks/*/*.park; do
-          docker run --rm -v ${{ github.workspace }}/parks:/parks -v ${{ github.workspace }}/object:/home/node/.config/OpenRCT2/object/custom ci-check:latest index.js "$file"
+          docker run --rm -v ${{ github.workspace }}/parks:/parks -v ${{ github.workspace }}/object:/home/node/.config/OpenRCT2/object/custom ${{env.IMAGE}} index.js "$file"
         done
-    

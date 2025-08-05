@@ -1,0 +1,45 @@
+name: Generate metadata
+
+on:
+  workflow_run:
+    workflows: [Build MetadataGen Image]
+    types:
+      - completed
+  workflow_dispatch:
+    branches: [ master ]
+  repository_dispatch:
+    types: [ metadata-gen ]
+  push:
+    branches: [ master ]
+    paths: 
+      - "parks/**"
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE: ghcr.io/corysanin/ffa-tycoon-parks:metadata
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+
+    - name: Pull image from GitHub Container Registry
+      run: docker pull ${{ env.IMAGE }}
+
+    - name: Generate metadata
+      run: |
+        mkdir -p ${{ github.workspace }}/distribution/thumbnails/
+        chmod --recursive 777 ${{ github.workspace }}/distribution
+        docker run --rm -v ${{ github.workspace }}/parks/economy/:/parks -v ${{ github.workspace }}/distribution:/distribution -e SCREENSHOTTERURL='${{ secrets.SCREENSHOTTERURL }}' -e SCREENSHOTTERTOKEN='${{ secrets.SCREENSHOTTERTOKEN }}' ${{env.IMAGE}}
+    
+    - name: Commit metadata
+      run: |
+        git config --global user.name 'Metadata Generator'
+        git config --global user.email 'ffameta@sanin.dev'
+        (git add -A && git commit -m "Update park metadata" && git push) || echo "No commit"

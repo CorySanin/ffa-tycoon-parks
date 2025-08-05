@@ -21,13 +21,20 @@ A park must meet this requirements in order to be considered for the FFA Tycoon 
     - Scenery/general aesthetic
     - Climate
     - Difficulty
-- One of each type of basic amenity
+- One of each type of basic amenity pre-placed in the park
     - Food
     - Drink
     - Restroom
 - At least one ride (optional but recommended)
+- Proper metadata
+    - Park name in game is accurate
+    - Park description is descriptive/not generic
+    - Authorship credit(s) embedded in the save (tool coming soon)
+    - Coordinates for generating a screenshot (tool coming soon)
 
 ## Preparing Park for Submission
+
+Use the [authorship plugin](plugin/lib/authoring.js) to add yourself as an author to the park file. This is displayed on the maps list on ffa-tycoon.com
 
 There are two types of scenarios: sandbox and economy. The process of converting one to the other can be quite tedious, so it is recommended that you first prepare an economy-oriented park (that is, enable the cash machine stall) and then put that through the [save prep tool](https://prep.ffa-tycoon.com/).
 
@@ -81,3 +88,14 @@ Make sure default branch master is the current branch. Then select Repository â†
 Type the following into the terminal and push enter: `git pull upstream master`
 
 Close the terminal window and return to GitHub Desktop. You can go back to step 3 to start a new submission.
+
+## Generating Metadata
+
+Github actions automatically update park metadata in the `distribution` directory. However you can run the docker compose project to do a dry-run:
+
+```
+cd plugin && npm install && npm run build && cd ..
+ln plugin/lib/metadata-read.js metadata-gen/
+ln -sf .env.dev .env
+docker compose up
+```
