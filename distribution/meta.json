@@ -159,6 +159,12 @@
         "Scrambled Eggs",
         "Swinging Ship"
       ],
+      "thumbnail": {
+        "rotation": 0,
+        "zoom": 1,
+        "x": 1500,
+        "y": 650
+      },
       "baseParkName": "forest_frontiers",
       "source": "RollerCoaster Tycoon"
     },
