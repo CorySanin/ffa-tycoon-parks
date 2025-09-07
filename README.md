@@ -29,12 +29,12 @@ A park must meet this requirements in order to be considered for the FFA Tycoon 
 - Proper metadata
     - Park name in game is accurate
     - Park description is descriptive/not generic
-    - Authorship credit(s) embedded in the save (tool coming soon)
-    - Coordinates for generating a screenshot (tool coming soon)
+    - Authorship credit(s) embedded in the save
+    - Coordinates for generating a screenshot
 
 ## Preparing Park for Submission
 
-Use the [authorship plugin](plugin/lib/authoring.js) to add yourself as an author to the park file. This is displayed on the maps list on ffa-tycoon.com
+Use the [authorship plugin](plugin/lib/authoring.js) (accessible by long-clicking the map icon) to add yourself as an author to the park file. This is displayed on the maps list on ffa-tycoon.com
 
 There are two types of scenarios: sandbox and economy. The process of converting one to the other can be quite tedious, so it is recommended that you first prepare an economy-oriented park (that is, enable the cash machine stall) and then put that through the [save prep tool](https://prep.ffa-tycoon.com/).
 
