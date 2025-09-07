@@ -54,6 +54,19 @@
       "source": "Custom"
     },
     {
+      "prettyParkName": "Cold Rock River",
+      "description": "The climate in this land is cold. ",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Pipeweed"
+      ],
+      "baseParkName": "crazy_craters",
+      "source": "Custom"
+    },
+    {
       "prettyParkName": "Dirty Dusty Dome",
       "description": "This land  is hot and dry,  it  is said that rain fall only once every five years. The winds are quite strong and dirtstorm is more likely.",
       "dimensions": {
