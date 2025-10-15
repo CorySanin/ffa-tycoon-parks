@@ -54,6 +54,19 @@
       "source": "Custom"
     },
     {
+      "prettyParkName": "Crazy Craters",
+      "description": "In a far-off world where money is not needed (unless you're playing on an economy server), you must build an entertainment center to keep the people happy - Edited by RGTM for FFA-Tycoon.com",
+      "dimensions": {
+        "x": 134,
+        "y": 134
+      },
+      "existingRides": [
+        "Unidentified Funky Objects"
+      ],
+      "baseParkName": "crazy_craters",
+      "source": "RollerCoaster Tycoon: Loopy Landscapes"
+    },
+    {
       "prettyParkName": "Dirty Dusty Dome",
       "description": "This land  is hot and dry,  it  is said that rain fall only once every five years. The winds are quite strong and dirtstorm is more likely.",
       "dimensions": {
@@ -146,6 +159,12 @@
         "Scrambled Eggs",
         "Swinging Ship"
       ],
+      "thumbnail": {
+        "rotation": 0,
+        "zoom": 1,
+        "x": 1500,
+        "y": 650
+      },
       "baseParkName": "forest_frontiers",
       "source": "RollerCoaster Tycoon"
     },
