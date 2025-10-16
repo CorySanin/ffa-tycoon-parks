@@ -237,6 +237,28 @@
       "source": "RollerCoaster Tycoon"
     },
     {
+      "prettyParkName": "Mushroom Plains",
+      "description": "This land is covered in large mushrooms and the rides can make it more enchanting. Another SlyWerewolfAJ Map.",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Gleeful Egg"
+      ],
+      "thumbnail": {
+        "rotation": 2,
+        "zoom": 0,
+        "x": 3126,
+        "y": 1464
+      },
+      "authors": [
+        "SlyWerewolfAJ"
+      ],
+      "baseParkName": "mushroom_plains",
+      "source": "Custom"
+    },
+    {
       "prettyParkName": "Pc Ported",
       "description": "5th Map submitted by SlyWerewolfAJ",
       "dimensions": {
