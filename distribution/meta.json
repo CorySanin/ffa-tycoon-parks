@@ -15,7 +15,7 @@
     },
     {
       "prettyParkName": "Arid Heights",
-      "description": "Anything goes in this desert park. - Edited by RGTM for FFA-Tycoon.com",
+      "description": "Anything goes in this desert park - Edited by RGTM for FFA-Tycoon.com",
       "dimensions": {
         "x": 128,
         "y": 128
@@ -235,6 +235,28 @@
       ],
       "baseParkName": "mega_park",
       "source": "RollerCoaster Tycoon"
+    },
+    {
+      "prettyParkName": "Mushroom Plains",
+      "description": "This land is covered in large mushrooms and the rides can make it more enchanting. Another SlyWerewolfAJ Map.",
+      "dimensions": {
+        "x": 150,
+        "y": 150
+      },
+      "existingRides": [
+        "Gleeful Egg"
+      ],
+      "thumbnail": {
+        "rotation": 2,
+        "zoom": 0,
+        "x": 3126,
+        "y": 1464
+      },
+      "authors": [
+        "SlyWerewolfAJ"
+      ],
+      "baseParkName": "mushroom_plains",
+      "source": "Custom"
     },
     {
       "prettyParkName": "Pc Ported",
