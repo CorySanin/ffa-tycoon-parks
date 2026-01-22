@@ -1,15 +1,17 @@
 {
   "name": "ffa-tycoon-parks-metadata-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate metadata for Rollercoaster Tycoon FFA parks",
   "main": "src/index.ts",
   "type": "module",
   "dependencies": {
-    "ky": "1.8.1"
+    "ky": "1.14.2",
+    "pngjs": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^24.0.3",
-    "typescript": "5.8.3"
+    "@types/pngjs": "6.0.5",
+    "typescript": "5.9.3"
   },
   "repository": {
     "type": "git",

@@ -2,7 +2,9 @@
 import path from 'path';
 import * as fsp from 'fs/promises';
 import { spawn } from 'child_process';
+import { Buffer } from 'buffer';
 import ky from 'ky';
+import { PNG } from 'pngjs';
 import { getSourceGame } from './source-identifier.ts';
 
 function requireEnvVar(varName: string): string {
@@ -88,6 +90,41 @@ async function readParkFile(parkfile: string): Promise<Partial<ParkMetaData>> {
     return pluginStorage.meta;
 }
 
+function readPng(input: Buffer): Promise<PNG> {
+    return new Promise(async (resolve, reject) => {
+        new PNG({}).parse(input, (err, data) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve(data);
+        });
+    });
+}
+
+async function isScreenshotNew(path: string, buffer: ArrayBuffer) {
+    const pngPromise = readPng(await fsp.readFile(path));
+    try {
+        await pngPromise
+    }
+    catch (err) {
+        console.error(err);
+        return true;
+    }
+    const png1 = await pngPromise;
+    const png2 = await readPng(Buffer.from(buffer));
+
+    if (png1.data.length !== png2.data.length) {
+        return true;
+    }
+    for (let i = 0; i < png1.data.length; i++) {
+        if (png1.data[i] !== png2.data[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
 async function generateScreenshot(parkfile: string, outputDir: string, meta: Partial<ParkMetaData>): Promise<void> {
     const screenshotPath = path.join(outputDir, `${baseParkName(parkfile)}.png`);
     const screenshotOptions: ScreenshotOptions = {
@@ -117,7 +154,9 @@ async function generateScreenshot(parkfile: string, outputDir: string, meta: Par
     if (!response.ok || !response.body) {
         throw new Error(`Failed to generate screenshot for ${parkfile}: ${response.statusText}`);
     }
-    await fsp.writeFile(screenshotPath, response.body);
+    if (await isScreenshotNew(screenshotPath, await response.arrayBuffer())) {
+        await fsp.writeFile(screenshotPath, response.body);
+    }
 }
 
 const parkfiles = (await fsp.readdir(PARKSDIR, { withFileTypes: true })).filter(f => f.isFile()).map(f => path.join(PARKSDIR, f.name));
