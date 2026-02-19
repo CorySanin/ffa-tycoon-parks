@@ -151,7 +151,7 @@ async function generateScreenshot(parkfile: string, outputDir: string, meta: Par
             Authorization: `Bearer ${SCREENSHOTTERTOKEN}`
         }
     });
-    if (!response.ok || !response.body) {
+    if (!response.ok || !('body' in response)) {
         throw new Error(`Failed to generate screenshot for ${parkfile}: ${response.statusText}`);
     }
     if (await isScreenshotNew(screenshotPath, await response.arrayBuffer())) {
