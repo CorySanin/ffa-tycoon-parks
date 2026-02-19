@@ -154,8 +154,9 @@ async function generateScreenshot(parkfile: string, outputDir: string, meta: Par
     if (!response.ok || !('body' in response)) {
         throw new Error(`Failed to generate screenshot for ${parkfile}: ${response.statusText}`);
     }
-    if (await isScreenshotNew(screenshotPath, await response.arrayBuffer())) {
-        await fsp.writeFile(screenshotPath, response.body);
+    const respArrBuffer = await response.arrayBuffer()
+    if (await isScreenshotNew(screenshotPath, respArrBuffer)) {
+        await fsp.writeFile(screenshotPath, Buffer.from(respArrBuffer));
     }
 }
 
